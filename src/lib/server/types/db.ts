@@ -498,6 +498,7 @@ export interface PageMonitorRecord {
   monitor_tag: string;
   monitor_settings_json: string | null;
   position: number;
+  group_name: string | null;
   created_at: Date;
   updated_at: Date;
 }
@@ -507,6 +508,7 @@ export interface PageMonitorRecordInsert {
   monitor_tag: string;
   monitor_settings_json?: string | null;
   position?: number;
+  group_name?: string | null;
 }
 
 export interface PageMonitorRecordTyped {
@@ -514,6 +516,7 @@ export interface PageMonitorRecordTyped {
   monitor_tag: string;
   monitor_settings: Record<string, unknown> | null;
   position: number;
+  group_name: string | null;
   created_at: Date;
   updated_at: Date;
 }
