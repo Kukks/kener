@@ -1,26 +1,17 @@
 name: Retag GHCR Image
 
 on:
-  workflow_dispatch:
-    inputs:
-      source_tag:
-        description: Existing image tag to copy
-        required: true
-        default: nightly
-        type: string
-      target_tag:
-        description: New release-style image tag
-        required: true
-        default: v4.2.1-page-monitor-groups.1
-        type: string
+  push:
+    branches:
+      - next/retag-v4.2.1-page-monitor-groups.1
 
 permissions:
   contents: read
   packages: write
 
 env:
-  SOURCE_TAG: ${{ inputs.source_tag }}
-  TARGET_TAG: ${{ inputs.target_tag }}
+  SOURCE_TAG: nightly
+  TARGET_TAG: v4.2.1-page-monitor-groups.1
 
 jobs:
   retag:
